@@ -1,0 +1,57 @@
+# --- Build output ---
+build/
+out/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+*.vcxproj*
+*.sln
+.vs/
+
+# --- Vendored third-party dependencies ---
+# OpenCV + LibTorch (CPU) drops — large vendored binaries, not source we own.
+# Re-acquire locally rather than committing; see README_CPP.md for where they
+# come from.
+third_party/
+
+# --- Images & video ---
+# Dataset content, including images sourced from Kaggle that we don't have
+# redistribution rights for. Also strips training-run visualizations
+# (val_predictions.jpg etc.) since those embed the actual dataset images.
+*.jpg
+*.jpeg
+*.png
+*.bmp
+*.tif
+*.tiff
+*.webp
+*.gif
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# --- Trained model weights / exports ---
+# Large binaries, regenerate via training/export tools.
+*.pt
+*.pth
+*.ptl
+*.torchscript
+*.tflite
+*.onnx
+*.engine
+
+# --- Native build artifacts ---
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exe
+*.dll
+*.lib
+*.exp
+
+# --- Logs & OS junk ---
+*.log
+Thumbs.db
+.DS_Store
